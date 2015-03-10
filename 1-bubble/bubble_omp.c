@@ -150,7 +150,7 @@ void Bubble_sort(
       int  n    /* in     */) {
    int list_length=n, i,x,ind, temp,ltemp,max;
    double start = omp_get_wtime();
- //  printf("nt=%d NT=%d ll=%d\n",nthreads,omp_get_num_threads(),list_length);
+   //printf("nt=%d NT=%d ll=%d\n",nthreads,omp_get_num_threads(),list_length);
    //block_size = (int)omp_get_num_threads()/list_length;
    block_size = (int)(list_length/nthreads);
 
@@ -159,18 +159,18 @@ void Bubble_sort(
 
 int ordered = 0,changed = 0;
 
-  #pragma omp parallel for shared(a,lock,n,list_length,ordered) num_threads(nthreads) private(temp,i,ltemp,ind) firstprivate(block_size,changed) 
-   for (x=0; x<n-1; x++){
+  #pragma omp parallel shared(a,lock,n,list_length,ordered) num_threads(nthreads) private(temp,i,ltemp,ind) firstprivate(block_size,changed) 
+//   for (x=0; x<n-1; x++){
+   while(!ordered){
 	
-#pragma omp cancel[ordered==1]
+//#pragma omp cancel[ordered==1]
 	changed = 0;
    //for (list_length=n; list_length >= 2; list_length--){
 	//printf("=%d len %d\n",omp_get_thread_num(),list_length);
-	#pragma omp critical
-	ltemp = --list_length;
      for(ind=0;ind<nthreads;ind++){
 	 omp_set_lock(&(lock[ind]));
-     max = ltemp>(ind+1)*block_size ? (ind+1)*block_size : ltemp;
+     //max = ltemp>(ind+1)*block_size ? (ind+1)*block_size : ltemp;
+     max = list_length>(ind+1)*block_size ? (ind+1)*block_size : list_length;
       for (i = ind*block_size; i < max; i++){
 //	 omp_set_lock(&(lock[i+1]));
 	 
@@ -186,6 +186,9 @@ int ordered = 0,changed = 0;
      }
 	if(changed==0)
 		ordered = 1;
+//	#pragma omp critical
+//	ltemp = --list_length;
+	list_length--;
 
 }
 for(i=0;i<nthreads;i++)
