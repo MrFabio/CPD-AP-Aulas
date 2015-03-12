@@ -1,3 +1,3 @@
-#Computer Systems Engineering
+#Parallel Algorithms
 @Parallel and Distributed Computing
 
