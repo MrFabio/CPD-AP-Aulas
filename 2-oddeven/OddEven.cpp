@@ -1,10 +1,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
-#define N 1000
+//#define N 1000
 
-int A[N];
+int *A;
+int N;
 
 void OESort(int NN, int *A)
 {
@@ -38,14 +40,15 @@ void init_data()
 int main(int argc, char* argv[])
 {	
 	int i, j;
-
+	N = (int)atoi(argv[1]);
+	A = (int*) malloc(sizeof(int)*N);
 	init_data();
-
 	//for ( i = 0; i < N; i++) printf("%3d ",A[i]);
 //	printf("\n\n");
-
+	double start=omp_get_wtime(),end;
 	OESort(N,A);
-
-//	for ( j = 0; j < N; j++) printf("%3d ",A[j]);
+	end = omp_get_wtime();
+	printf("%3.2g\n",end-start);
+	//for ( j = 0; j < N; j++) printf("%3d ",A[j]);
 	return 0;
 }
