@@ -65,6 +65,6 @@ int main(int argc, char* argv[])
 	OESort(N,A);
 	end = omp_get_wtime();
 	printf("%3.2g\n",end-start);
-	//for ( j = 0; j < N; j++) printf("%3d ",A[j]);
+	for ( j = 0; j < N; j++) printf("%3d ",A[j]);
 	return 0;
 }
