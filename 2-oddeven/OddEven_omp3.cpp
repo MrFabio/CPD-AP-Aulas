@@ -10,14 +10,12 @@ int *A;
 void OESort(int NN, int *A)
 {
 	int exch0, exch1=1, i,first=0;
-	
-	    #pragma omp parallel
-	       {int temp;
+	#pragma omp parallel
+	{int temp;
 	while (exch1) {
-	      #pragma omp barrier
-	    exch0=0;exch1=0;
-
-	      #pragma omp barrier
+	    #pragma omp barrier
+		exch0=0;exch1=0;
+	    #pragma omp barrier
 		
 		#pragma omp for private(i,temp)
 		for (i = 0; i < NN-1; i+=2) {
@@ -26,9 +24,7 @@ void OESort(int NN, int *A)
 				exch0=1;
 			}
 		}
-		
 		if(exch0 || !first){
-		
 		#pragma omp for private(i,temp)
 		for (i = 1; i < NN-1; i+=2) {
 			if (A[i] > A[i+1]) {
@@ -36,9 +32,8 @@ void OESort(int NN, int *A)
 				exch1=1;
 			}
 		}
-
 	       }
-	      first=1;
+	    first=1;
 	}}
 }
 

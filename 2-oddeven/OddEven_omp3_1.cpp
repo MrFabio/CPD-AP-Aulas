@@ -10,35 +10,28 @@ int *A;
 void OESort(int NN, int *A)
 {
 	int exch0, exch1=1, i,first=0;
-	
 	while (exch1) {
 	    exch0=0;exch1=0;
 	    #pragma omp parallel
 	       {int temp;
-
-		
-		#pragma omp for private(i,temp)
-		for (i = 0; i < NN-1; i+=2) {
-			if (A[i] > A[i+1]) {
-				temp = A[i]; A[i] = A[i+1]; A[i+1] = temp;
-				exch0=1;
+			#pragma omp for private(i,temp)
+			for (i = 0; i < NN-1; i+=2) {
+				if (A[i] > A[i+1]) {
+					temp = A[i]; A[i] = A[i+1]; A[i+1] = temp;
+					exch0=1;
+				}
 			}
-		}
-		
-		if(exch0 || !first){
-		
-		#pragma omp for private(i,temp)
-		for (i = 1; i < NN-1; i+=2) {
-			if (A[i] > A[i+1]) {
-				temp = A[i]; A[i] = A[i+1]; A[i+1] = temp;
-				exch1=1;
+			if(exch0 || !first){
+			#pragma omp for private(i,temp)
+			for (i = 1; i < NN-1; i+=2) {
+				if (A[i] > A[i+1]) {
+					temp = A[i]; A[i] = A[i+1]; A[i+1] = temp;
+					exch1=1;
+				}
 			}
-		}
-
-	       }}
+			   }}
 	      first=1;
-	}
-}
+	}}
 
 void init_data()
 {
