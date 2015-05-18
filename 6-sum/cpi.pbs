@@ -1,0 +1,10 @@
+##!/bin/bash
+#PBS -l walltime=02:33:00
+#PBS-j oe
+#PBS -N SUM_SCAN
+##PBB S -lnodes=4:ppn=2
+cat $PBS_NODEFILE
+cd ~/CPD-AP-Aulas/6-sum/
+
+./script.sh
+

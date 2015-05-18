@@ -104,9 +104,11 @@ int main(int argc, char* argv[])
 {
   int j, sum = 0;
 
-  NUM = atoi(argv[1]);
+  
+NUM = atoi(argv[1]);
   NUM_THREADS = atoi(argv[2]);
 
+  //printf("NUM:%d NUM_THREADS:%d\n",NUM,NUM_THREADS);
 
   X = (int*) malloc(sizeof(int)*NUM);
   inTotals = (int*) malloc(sizeof(int)*NUM_THREADS);
