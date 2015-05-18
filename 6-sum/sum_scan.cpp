@@ -4,16 +4,18 @@
 #include <omp.h>
 
 
-#define NUM 16000000
-#define NUM_THREADS 8
+//#define NUM 16000000
+//#define NUM_THREADS 8
 
-int N=NUM;  // number of elements in array X
+
+int NUM_THREADS;
+int NUM;  // number of elements in array X
 //int X[NUM]={3,5,2,5,7,9,-4,6,7,-3,1,7,6,8,-1,2}; // Test values,16/4 sum=60
-int X[NUM];
-int inTotals[NUM_THREADS];  // global storage for partial results
-int outTotals[NUM_THREADS];  // global storage for partial results
-pthread_mutex_t mutexs1[NUM_THREADS];
-pthread_mutex_t mutexs2[NUM_THREADS];
+int *X;
+int *inTotals;  // global storage for partial results
+int *outTotals;  // global storage for partial results
+pthread_mutex_t *mutexs1;
+pthread_mutex_t *mutexs2;
 
 void printArray(int * Y, int size){
   int i;
@@ -67,12 +69,12 @@ void *Summation (void *pArg)
   int lSum = 0;
   int start, end;
   int i,z=0;
-  int size = N/NUM_THREADS;
+  int size = NUM/NUM_THREADS;
 
   start = (size) * tNum;
   end = (size) * (tNum+1);
 
-  if (tNum == (NUM_THREADS-1)) end = N;
+  if (tNum == (NUM_THREADS-1)) end = NUM;
 
   prefixScan(X,start,end);
 
@@ -93,7 +95,7 @@ void InitializeArray(int *S, int *N)
 {
   int i;
   for (i = 0; i < NUM; i++){
-    S[i] = (i+1) % 10;
+    S[i] = (i+1) ;
   }
 }
 
@@ -101,9 +103,20 @@ void InitializeArray(int *S, int *N)
 int main(int argc, char* argv[])
 {
   int j, sum = 0;
-  pthread_t tHandles[NUM_THREADS];
 
-  InitializeArray(X,&N);  // get values into A array; not shown
+  NUM = atoi(argv[1]);
+  NUM_THREADS = atoi(argv[2]);
+
+
+  X = (int*) malloc(sizeof(int)*NUM);
+  inTotals = (int*) malloc(sizeof(int)*NUM_THREADS);
+  outTotals = (int*) malloc(sizeof(int)*NUM_THREADS);
+  mutexs1 = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t)*NUM_THREADS);
+  mutexs2 = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t)*NUM_THREADS);
+
+  pthread_t * tHandles = (pthread_t*) malloc(sizeof(pthread_t)*NUM_THREADS);
+
+  InitializeArray(X,&NUM);  // get values into A array; not shown
 
 //  printArray(X,N);
   double start,end;
@@ -137,7 +150,8 @@ int main(int argc, char* argv[])
     sum += inTotals[j];
   }
 
-  printf("The sum of array elements is %d\n", sum);
+  if(argc==3)
+    printf("The sum of array elements is %d\n", sum);
 //  printArray(inTotals,N/NUM_THREADS);
 
 //  printArray(outTotals,N/NUM_THREADS);
