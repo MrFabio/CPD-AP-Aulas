@@ -67,7 +67,7 @@ int main(int argc, char **argv)
     int offset = size / (n_proc);
     int off = 0,proc;
 
-	printf("pid:%d  start:%d end:%d offset:%d size:%d\n",pid,start+(offset*pid),start+(offset*(pid+1)),offset,size);
+//	printf("pid:%d  start:%d end:%d offset:%d size:%d\n",pid,start+(offset*pid),start+(offset*(pid+1)),offset,size);
 //    int *the_num = new int[size];
 	if(pid==0){
 	  num = new int[size];
@@ -91,12 +91,12 @@ int main(int argc, char **argv)
 	for (i = 0; i < size; i++) {
 		for (j = i+1; j< size; j++) {
 			if ((num[i] == num[j]) && (den[i] == den[j]))
-				printf ("%d and %d are FRIENDLY \n", start+i, start+j);
+				;//printf ("%d and %d are FRIENDLY \n", start+i, start+j);
 		}
 	}	
 
 	    time=MPI_Wtime()-time;
-	    printf("Time:%f seconds\n");
+	    printf("Time:%f seconds\n",time);
 /*	printf("num %d\n",pid);
 	printArray(num,size);
 	printf("den %d\n",pid);
