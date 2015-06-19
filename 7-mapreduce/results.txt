@@ -1,0 +1,373 @@
+
+
+MPI 1000	2
+0,000648 seconds
+
+
+MRMPI 1000	2
+
+Map time (secs) = 0,000672817
+Collate time (secs) = 0,0279109
+The following numbers are friendly:
+Reduce time (secs) = 0,00285006
+Time:0,031632 seconds
+
+
+MPI 1000	4
+0,000367 seconds
+
+
+MRMPI 1000	4
+
+Map time (secs) = 0,000506163
+Collate time (secs) = 0,0351219
+The following numbers are friendly:
+Reduce time (secs) = 0,0046649
+Time:0,040653 seconds
+
+
+MPI 1000	8
+0,000800 seconds
+
+
+MRMPI 1000	8
+
+Map time (secs) = 0,000515223
+Collate time (secs) = 0,0617509
+The following numbers are friendly:
+Reduce time (secs) = 0,00831795
+Time:0,071845 seconds
+
+
+MPI 1000	10
+0,000709 seconds
+
+
+MRMPI 1000	10
+
+Map time (secs) = 0,000488043
+Collate time (secs) = 0,0647449
+The following numbers are friendly:
+Reduce time (secs) = 0,00822902
+Time:0,075296 seconds
+
+
+MPI 1000	12
+0,041271 seconds
+
+
+MRMPI 1000	12
+
+Map time (secs) = 0,000808001
+Collate time (secs) = 0,065876
+The following numbers are friendly:
+Reduce time (secs) = 0,00885892
+Time:0,117840 seconds
+
+
+MPI 1000	16
+0,001820 seconds
+
+
+MRMPI 1000	16
+
+Map time (secs) = 0,00125003
+Collate time (secs) = 0,069927
+The following numbers are friendly:
+Reduce time (secs) = 0,00878
+Time:0,082499 seconds
+
+
+MPI 1000	20
+0,001776 seconds
+
+
+MRMPI 1000	20
+
+Map time (secs) = 0,00102687
+Collate time (secs) = 0,0728202
+The following numbers are friendly:
+Reduce time (secs) = 0,0100679
+Time:0,087196 seconds
+
+
+-----------------
+
+
+MPI 10000	2
+0,031002 seconds
+
+
+MRMPI 10000	2
+
+Map time (secs) = 0,0311019
+Collate time (secs) = 0,0285001
+The following numbers are friendly:
+Reduce time (secs) = 0,00304794
+Time:0,062865 seconds
+
+
+MPI 10000	4
+0,018001 seconds
+
+
+MRMPI 10000	4
+
+Map time (secs) = 0,0179851
+Collate time (secs) = 0,035567
+The following numbers are friendly:
+Reduce time (secs) = 0,00507808
+Time:0,058853 seconds
+
+
+MPI 10000	8
+0,009842 seconds
+
+
+MRMPI 10000	8
+
+Map time (secs) = 0,00976706
+Collate time (secs) = 0,0622301
+The following numbers are friendly:
+Reduce time (secs) = 0,00817299
+Time:0,081425 seconds
+
+
+MPI 10000	10
+0,008303 seconds
+
+
+MRMPI 10000	10
+
+Map time (secs) = 0,00813699
+Collate time (secs) = 0,0632191
+The following numbers are friendly:
+Reduce time (secs) = 0,00794101
+Time:0,081228 seconds
+
+
+MPI 10000	12
+0,047512 seconds
+
+
+MRMPI 10000	12
+
+Map time (secs) = 0,00690007
+Collate time (secs) = 0,0671232
+The following numbers are friendly:
+Reduce time (secs) = 0,0087471
+Time:0,125249 seconds
+
+
+MPI 10000	16
+0,005867 seconds
+
+
+MRMPI 10000	16
+
+Map time (secs) = 0,00566006
+Collate time (secs) = 0,0686951
+The following numbers are friendly:
+Reduce time (secs) = 0,009691
+Time:0,086703 seconds
+
+
+MPI 10000	20
+0,004620 seconds
+
+
+MRMPI 10000	20
+
+Map time (secs) = 0,00435305
+Collate time (secs) = 0,0719352
+The following numbers are friendly:
+Reduce time (secs) = 0,00972009
+Time:0,089436 seconds
+
+
+
+
+MPI 100000	2
+2,361124 seconds
+
+
+MRMPI 100000	2
+
+Map time (secs) = 2,36164
+Collate time (secs) = 0,05744
+The following numbers are friendly:
+Reduce time (secs) = 0,0040791
+Time:2,423491 seconds
+
+
+MPI 100000	4
+1,359308 seconds
+
+
+MRMPI 100000	4
+
+Map time (secs) = 1,35947
+Collate time (secs) = 0,0471301
+The following numbers are friendly:
+Reduce time (secs) = 0,0055871
+Time:1,412529 seconds
+
+
+MPI 100000	8
+0,730489 seconds
+
+
+MRMPI 100000	8
+
+Map time (secs) = 0,73036
+Collate time (secs) = 0,0748811
+The following numbers are friendly:
+Reduce time (secs) = 0,00906801
+Time:0,815354 seconds
+
+
+MPI 100000	10
+0,589432 seconds
+
+
+MRMPI 100000	10
+
+Map time (secs) = 0,588061
+Collate time (secs) = 0,0730479
+The following numbers are friendly:
+Reduce time (secs) = 0,00932193
+Time:0,672425 seconds
+
+
+MPI 100000	12
+0,535457 seconds
+
+
+MRMPI 100000	12
+
+Map time (secs) = 0,494659
+Collate time (secs) = 0,0718021
+The following numbers are friendly:
+Reduce time (secs) = 0,0093441
+Time:0,618132 seconds
+
+
+MPI 100000	16
+0,375138 seconds
+
+
+MRMPI 100000	16
+
+Map time (secs) = 0,375938
+Collate time (secs) = 0,0826218
+The following numbers are friendly:
+Reduce time (secs) = 0,010123
+Time:0,471326 seconds
+
+
+MPI 100000	20
+0,302531 seconds
+
+
+MRMPI 100000	20
+
+Map time (secs) = 0,301557
+Collate time (secs) = 0,082247
+The following numbers are friendly:
+Reduce time (secs) = 0,0101011
+Time:0,397372 seconds
+
+
+
+
+MPI 1000000	2
+192,827680 seconds
+
+
+MRMPI 1000000	2
+
+Map time (secs) = 192,721
+Collate time (secs) = 0,253695
+The following numbers are friendly:
+Reduce time (secs) = 0,0068531
+Time:192,982051 seconds
+
+
+MPI 1000000	4
+111,227401 seconds
+
+
+MRMPI 1000000	4
+
+Map time (secs) = 111,253
+Collate time (secs) = 0,213024
+The following numbers are friendly:
+Reduce time (secs) = 0,00972605
+Time:111,476391 seconds
+
+
+MPI 1000000	8
+59,523717 seconds
+
+
+MRMPI 1000000	8
+
+Map time (secs) = 59,5216
+Collate time (secs) = 0,229946
+The following numbers are friendly:
+Reduce time (secs) = 0,0132341
+Time:59,765850 seconds
+
+
+MPI 1000000	10
+47,966916 seconds
+
+
+MRMPI 1000000	10
+
+Map time (secs) = 47,9616
+Collate time (secs) = 0,224026
+The following numbers are friendly:
+Reduce time (secs) = 0,0119891
+Time:48,199881 seconds
+
+
+MPI 1000000	12
+40,318145 seconds
+
+
+MRMPI 1000000	12
+
+Map time (secs) = 40,256
+Collate time (secs) = 0,208352
+The following numbers are friendly:
+Reduce time (secs) = 0,0118999
+Time:40,518566 seconds
+
+
+MPI 1000000	16
+30,621357 seconds
+
+
+MRMPI 1000000	16
+
+Map time (secs) = 30,6492
+Collate time (secs) = 0,445131
+The following numbers are friendly:
+Reduce time (secs) = 0,013289
+Time:31,110148 seconds
+
+
+MPI 1000000	20
+24,516268 seconds
+
+
+MRMPI 1000000	20
+
+Map time (secs) = 24,5101
+Collate time (secs) = 1,359
+The following numbers are friendly:
+Reduce time (secs) = 0,0128281
+Time:25,885554 seconds
+
+
